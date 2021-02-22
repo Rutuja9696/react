@@ -19,8 +19,10 @@ function Blogs(props) {
           return (
             <div className={Styles.card}>
               <img src={blog.imageUrl} className={Styles.image} />
-              <p key={blog.id}>{blog.title}</p>
-              <h6>- {blog.author}</h6>
+              <p key={blog.id} className={Styles.title}>
+                {blog.title}
+              </p>
+              <h6 className={Styles.author}>- {blog.author}</h6>
             </div>
           );
         })}
