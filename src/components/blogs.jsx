@@ -2,14 +2,17 @@ import { connect } from "react-redux";
 import store from "../redux/store/store";
 import { blogActionTypes } from "../redux/constants/blogActionTypes";
 import blogActionObjectGenerator from "../redux/action/blogActionGenerator";
-function Blogs() {
-  const getBlog = async () => {
+function Blogs(props) {
+  const getBlog = () => {
     store.dispatch(blogActionObjectGenerator(blogActionTypes.GET));
   };
   return (
     <div>
       <h1>BLOGS</h1>
-      <p></p>
+      <button onClick={getBlog}>All Blogs</button>
+      {props.blogProps.map((blog) => {
+        return <p key={blog.id}>{blog.title}</p>;
+      })}
     </div>
   );
 }
@@ -21,7 +24,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     getBlog: (payload = {}) => {
-      return dispatch(blogActionObjectGenerator(blogActionTypes.Get, payload));
+      return dispatch(blogActionObjectGenerator(blogActionTypes.GET, payload));
     },
   };
 };
