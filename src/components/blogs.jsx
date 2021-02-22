@@ -1,15 +1,20 @@
+import { useEffect } from "react";
 import { connect } from "react-redux";
 import store from "../redux/store/store";
 import { blogActionTypes } from "../redux/constants/blogActionTypes";
 import blogActionObjectGenerator from "../redux/action/blogActionGenerator";
 function Blogs(props) {
-  const getBlog = () => {
+  // const getBlog = () => {
+  // store.dispatch(blogActionObjectGenerator(blogActionTypes.GET));
+  // };
+  //use of hook
+  useEffect(() => {
     store.dispatch(blogActionObjectGenerator(blogActionTypes.GET));
-  };
+  });
+  //markup
   return (
     <div>
       <h1>BLOGS</h1>
-      <button onClick={getBlog}>All Blogs</button>
       {props.blogProps.map((blog) => {
         return <p key={blog.id}>{blog.title}</p>;
       })}
