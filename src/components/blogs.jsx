@@ -8,7 +8,7 @@ function Blogs(props) {
   //using of hook
   useEffect(() => {
     store.dispatch(blogActionObjectGenerator(blogActionTypes.GET));
-  });
+  }, []);
   //markup
   return (
     <div>
