@@ -9,7 +9,7 @@ const blogActionObjectGenerator = (actionType, payload = {}) => {
         dispatch({
           type: blogActionTypes.GET,
           payload: {
-            blogs: [...data],
+            blogs: [...data.data],
           },
         });
       };
