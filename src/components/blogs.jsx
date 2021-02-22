@@ -14,7 +14,13 @@ function Blogs(props) {
     <div>
       <h1>BLOGS</h1>
       {props.blogProps.map((blog) => {
-        return <p key={blog.id}>{blog.title}</p>;
+        return (
+          <div>
+            <img src={blog.imageUrl} />
+            <p key={blog.id}>{blog.title}</p>
+            <p>{blog.author}</p>
+          </div>
+        );
       })}
     </div>
   );
