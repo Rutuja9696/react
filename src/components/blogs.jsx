@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import store from "../redux/store/store";
 import { blogActionTypes } from "../redux/constants/blogActionTypes";
 import blogActionObjectGenerator from "../redux/action/blogActionGenerator";
+import Styles from "../styles/blog.module.css";
 
 function Blogs(props) {
   //using of hook
@@ -13,15 +14,17 @@ function Blogs(props) {
   return (
     <div>
       <h1>BLOGS</h1>
-      {props.blogProps.map((blog) => {
-        return (
-          <div>
-            <img src={blog.imageUrl} />
-            <p key={blog.id}>{blog.title}</p>
-            <p>{blog.author}</p>
-          </div>
-        );
-      })}
+      <div className={Styles.container}>
+        {props.blogProps.map((blog) => {
+          return (
+            <div className={Styles.card}>
+              <img src={blog.imageUrl} className={Styles.image} />
+              <p key={blog.id}>{blog.title}</p>
+              <h6>- {blog.author}</h6>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }
