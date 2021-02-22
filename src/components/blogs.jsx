@@ -3,11 +3,9 @@ import { connect } from "react-redux";
 import store from "../redux/store/store";
 import { blogActionTypes } from "../redux/constants/blogActionTypes";
 import blogActionObjectGenerator from "../redux/action/blogActionGenerator";
+
 function Blogs(props) {
-  // const getBlog = () => {
-  // store.dispatch(blogActionObjectGenerator(blogActionTypes.GET));
-  // };
-  //use of hook
+  //using of hook
   useEffect(() => {
     store.dispatch(blogActionObjectGenerator(blogActionTypes.GET));
   });
