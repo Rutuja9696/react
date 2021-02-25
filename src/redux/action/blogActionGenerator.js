@@ -10,15 +10,6 @@ const blogActionObjectGenerator = (actionType, payload = {}) => {
           blogs: [],
         },
       };
-    // return async (dispatch) => {
-    //   let { data } = await axios.get(url);
-    //   dispatch({
-    //     type: blogActionTypes.GET,
-    //     payload: {
-    //       users: [...data.data],
-    //     },
-    //   });
-    // };
     default: {
       return {
         type: "Invalid Action",
