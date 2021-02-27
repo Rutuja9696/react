@@ -13,6 +13,7 @@ function Blogs(props) {
   //markup
   return (
     <div>
+      <button>Change theme</button>
       <h1>BLOGS</h1>
       <div className={Styles.container}>
         {props.blogProps.map((blog, i) => {

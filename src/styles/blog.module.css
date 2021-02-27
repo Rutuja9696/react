@@ -1,3 +1,7 @@
+button {
+  padding: 4px;
+  border-radius: 1px;
+}
 .container {
   width: 100%;
   display: flex;
