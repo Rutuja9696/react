@@ -1,6 +1,6 @@
-# Blogs (Redux,Hook)
+# Blogs (Redux,Hook,Context)
 
-This project is developed using react js. Redux and hook(useEffect) are used to render blogs data. Frontend is hosted on Vercel. Backend is developed using nodejs and hosted on heroku.
+This project is developed using react js. Redux and hook(useEffect) are used to render blogs data. React context is used to change the theme.Frontend is hosted on Vercel. Backend is developed using nodejs and hosted on heroku.
 
 ## To run project:
 
