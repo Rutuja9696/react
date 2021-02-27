@@ -1,19 +1,22 @@
-import { useEffect } from "react";
+import { useEffect, useContext } from "react";
 import { connect } from "react-redux";
 import store from "../redux/store/store";
 import { blogActionTypes } from "../redux/constants/blogActionTypes";
 import blogActionObjectGenerator from "../redux/action/blogActionGenerator";
 import Styles from "../styles/blog.module.css";
+import ThemeContext from "../theme-context";
 
 function Blogs(props) {
   //using of hook
   useEffect(() => {
     store.dispatch(blogActionObjectGenerator(blogActionTypes.GET));
   }, []);
+  //holds current value of theme
+  const themes = useContext(ThemeContext);
   //markup
   return (
-    <div>
-      <button>Change theme</button>
+    <div style={themes}>
+      <button onClick={props.toggleTheme}>Change theme</button>
       <h1>BLOGS</h1>
       <div className={Styles.container}>
         {props.blogProps.map((blog, i) => {
