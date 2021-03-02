@@ -5,7 +5,7 @@ const url = "https://blog-rendering1.herokuapp.com/blogs";
 
 const fetchBlogs = async () => {
   const response = await axios.get(url);
-  return response.data.data;
+  return response.data;
 };
 export function* fetchBlogsSaga(payload) {
   try {

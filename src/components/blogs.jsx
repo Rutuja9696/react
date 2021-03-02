@@ -19,11 +19,11 @@ function Blogs(props) {
     <div style={themes}>
       <button onClick={props.toggleTheme}>Change theme</button>
       <h1>BLOGS</h1>
-      {props.blogProps.length === 0 ? (
+      {props.blogProps.status !== "Successful" ? (
         <Loader type="Puff" color="#00BFFF" height={520} width={80} />
       ) : (
         <div className={Styles.container}>
-          {props.blogProps.map((blog, i) => {
+          {props.blogProps.data.map((blog, i) => {
             return (
               <div key={i} className={Styles.card}>
                 <img src={blog.imageUrl} className={Styles.image} />

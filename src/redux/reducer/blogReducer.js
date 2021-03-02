@@ -7,7 +7,7 @@ const blogReducer = (state = initialState, action) => {
     case blogActionTypes.GET:
       return {
         ...state,
-        blogs: [...state.blogs, ...action.payload.blogs],
+        blogs: { ...state.blogs, ...action.payload.blogs },
       };
     default:
       return {
