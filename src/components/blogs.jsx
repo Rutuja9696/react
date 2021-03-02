@@ -20,7 +20,7 @@ function Blogs(props) {
       <button onClick={props.toggleTheme}>Change theme</button>
       <h1>BLOGS</h1>
       {props.blogProps.length === 0 ? (
-        <Loader type="Puff" color="#00BFFF" height={300} width={80} />
+        <Loader type="Puff" color="#00BFFF" height={520} width={80} />
       ) : (
         <div className={Styles.container}>
           {props.blogProps.map((blog, i) => {
