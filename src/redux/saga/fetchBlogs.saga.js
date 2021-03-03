@@ -15,5 +15,9 @@ export function* fetchBlogsSaga(payload) {
     }
   } catch (err) {
     console.log(err.message);
+    yield put({
+      type: blogActionTypes.GET,
+      payload: { blogs: { status: "Unsuccessful", message: err.message } },
+    });
   }
 }

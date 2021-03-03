@@ -19,9 +19,9 @@ function Blogs(props) {
     <div style={themes}>
       <button onClick={props.toggleTheme}>Change theme</button>
       <h1>BLOGS</h1>
-      {props.blogProps.status !== "Successful" ? (
+      {!props.blogProps.status ? (
         <Loader type="Puff" color="#00BFFF" height={520} width={80} />
-      ) : (
+      ) : props.blogProps.status === "Successful" ? (
         <div className={Styles.container}>
           {props.blogProps.data.map((blog, i) => {
             return (
@@ -35,6 +35,8 @@ function Blogs(props) {
             );
           })}
         </div>
+      ) : (
+        <p>{props.blogProps.message}</p>
       )}
     </div>
   );
